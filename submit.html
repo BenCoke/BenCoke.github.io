@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Have you done testing?</p>
+    <label for="1">Type 1</label>
+    <input type="checkbox" id="1" name="testingQ"><br>
+    <label for="2">Type 2</label>
+    <input type="checkbox" id="2" name="testingQ"><br><br>
+    <button onclick="download()">Download Statement</button>
+    <script>
+      function download(){
+        var text = localStorage.getItem("OrgName");
+        var filename = "statement.html";
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        element.innerHTML = "download";
+
+        //element.style.display = 'none';
+        document.body.appendChild(element);
+      }
+    </script>
+  </body>
+</html>

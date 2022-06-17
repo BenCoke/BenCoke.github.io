@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <label for="OrgName">OrgName:</label><br>
+    <input type="text" id="OrgName"><br>
+    <label for="yes">Yes</label>
+    <input type="radio" id="yes" name="yes/no"><br>
+    <label for="no">No</label>
+    <input type="radio" id="no" name="yes/no"><br>
+    <button onclick="storeThenLink()">Next</button>
+    <script>
+      function storeThenLink(){
+        var orgName = document.getElementById("OrgName");
+        localStorage.setItem("OrgName", orgName.value);
+        alert(localStorage.getItem("OrgName"));
+        window.open("submit.html", "_self");
+      }
+    </script>
+  </body>
+</html>

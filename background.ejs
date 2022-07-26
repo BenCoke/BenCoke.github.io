@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background info - Accessibility Statement Generator</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"/>
+  </head>
+  <body>
+    <div class="ds_page">
+      <div class="ds_page__top">
+        <!--
+            Notifications
+            Site header
+            Site navigation
+        -->
+        <header class="ds_site-header  ds_site-header--gradient" role="banner">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo  ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="/image/path/for/logo" alt="logo" />
+                </a>
+
+                <div class="ds_site-branding__title">
+                  Accessibility Statement Generator
+                </div>
+              </div>
+
+              <div class="ds_site-header__controls">
+                <label aria-controls="mobile-navigation" class="ds_site-header__control  js-toggle-menu" for="menu">
+                  <span class="ds_site-header__control-text">Menu</span>
+                  <svg class="ds_icon  ds_site-header__control-icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#menu"></use></svg>
+                  <svg class="ds_icon  ds_site-header__control-icon  ds_site-header__control-icon--active-icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#close"></use></svg>
+                </label>
+              </div>
+
+              <input class="ds_site-navigation__toggle" id="menu" type="checkbox" />
+              <nav id="mobile-navigation" class="ds_site-navigation  ds_site-navigation--mobile" data-module="ds-mobile-navigation-menu">
+                <ul class="ds_site-navigation__list">
+                  <li class="ds_site-navigation__item">
+                    <span class="ds_site-navigation__link  ds_current">
+                      Background information
+                    </span>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/improving-accessibility" class="ds_site-navigation__link">
+                      Improving accessibility
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/outside-scope" class="ds_site-navigation__link">
+                      Outside scope
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/disproportionate-burden" class="ds_site-navigation__link">
+                      Disproportionate burden
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/compliance" class="ds_site-navigation__link">
+                      Compliance
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="non-accessible-content" class="ds_site-navigation__link">
+                      Non-accessible content
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="ds_site-header__navigation">
+            <div class="ds_wrapper">
+              <nav class="ds_site-navigation">
+                <ul class="ds_site-navigation__list">
+                  <li class="ds_site-navigation__item">
+                    <span class="ds_site-navigation__link  ds_current">
+                      Background information
+                    </span>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/improving-accessibility" class="ds_site-navigation__link">
+                      Improving accessibility
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/outside-scope" class="ds_site-navigation__link">
+                      Outside scope
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/disproportionate-burden" class="ds_site-navigation__link">
+                      Disproportionate burden
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/compliance" class="ds_site-navigation__link">
+                      Compliance
+                    </a>
+                  </li>
+                  <li class="ds_site-navigation__item">
+                    <a href="/non-accessible-content" class="ds_site-navigation__link">
+                      Non-accessible content
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="ds_page__middle">
+        <div id="body_wrapper" class="body_wrapper">
+          <div class="ds_wrapper">
+            <main class="ds_layout  ds_layout--article">
+              <div class="ds_layout__header">
+                <header class="ds_page-header">
+                  <h1 class="ds_page-header__title">Background information</h1>
+                </header>
+              </div>
+
+              <div class="ds_layout__partner">
+                <!--
+                    Optional partner branding
+                -->
+                <h2>Partner branding</h2>
+              </div>
+
+              <div class="ds_layout__content">
+                <!--
+                    The article content
+                -->
+                <div>
+                  <label class="ds_label" for="organisation-name">What is the name of your organisation?</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="organisation-name" onchange="store('organisation-name');" />
+                </div>
+                <div>
+                  <label class="ds_label" for="website-name">What is the name of your website?</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="website-name" onchange="store('website-name');"/>
+                </div>
+                <div>
+                  <label class="ds_label" for="website-url">What is your website's URL?</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="website-url" onchange="store('website-url');"/>
+                </div>
+                <div data-module="ds-datepicker" class="ds_datepicker">
+                  <label class="ds_label" for="prepared-date">When was this statement prepared?</label>
+                  <div class="ds_input__wrapper">
+                    <input id="prepared-date" placeholder="dd/mm/yyyy" type="text" class="ds_input  ds_input--fixed-10" onchange="store('prepared-date')"/>
+                  </div>
+                </div>
+                <div data-module="ds-datepicker" class="ds_datepicker">
+                  <label class="ds_label" for="reviewed-date">When was this statement last reviewed?</label>
+                  <div class="ds_input__wrapper">
+                    <input id="reviewed-date" placeholder="dd/mm/yyyy" type="text" class="ds_input  ds_input--fixed-10" onchange="store('reviewed-date');"/>
+                  </div>
+                </div>
+                <p>Where can feedback be provided?</p>
+                <div>
+                  <label class="ds_label" for="feedback-email">Email</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-email" onchange="store('feedback-email');"/>
+                </div>
+                <div>
+                  <label class="ds_label" for="feedback-telephone">Telephone</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-telephone" onchange="store('feedback-telephone');"/>
+                </div>
+                <div>
+                  <label class="ds_label" for="feedback-name">Name</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-name" onchange="store('feedback-name');"/>
+                </div>
+                <div>
+                  <label class="ds_label" for="contact-form">Contact form URL</label>
+                  <input class="ds_input  ds_input--fluid-half" type="text" id="contact-form" onchange="store('contact-form');"/>
+                </div>
+                <div>
+                  <label class="ds_label" for="response-process">What is the response process?</label>
+                  <textarea class="ds_input  ds_input--fluid-half" rows="3" id="response-process" onchange="store('response-process');"></textarea>
+                </div>
+                <div class="button-group">
+                  <a href="/" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
+                    <svg class="ds_icon" aria-hidden="true" role="img"><use href="/dist/images/icons/icons.stack.svg#chevron_left"></use></svg>
+                    Back
+                  </a>
+
+                  <a href="/improving-accessibility" class="ds_button  ds_button--has-icon">
+                    Next
+                    <svg class="ds_icon" aria-hidden="true" role="img"><use href="/dist/images/icons/icons.stack.svg#chevron_right"></use></svg>
+                  </a>
+                </div>
+
+              </div>
+
+
+              <div class="ds_layout__sidebar">
+                <!--
+                    Sidebar content, such as related links
+                -->
+                <nav aria-label="Sections" class="ds_side-navigation" data-module="ds-side-navigation">
+                  <input type="checkbox" class="fully-hidden  js-toggle-side-navigation" id="show-side-navigation" aria-controls="side-navigation-root" />
+                  <label class="ds_side-navigation__expand  ds_link" for="show-side-navigation"><span class="visually-hidden">Show all</span> Pages in this section <span class="ds_side-navigation__expand-indicator"></span></label>
+
+                  <ul class="ds_side-navigation__list" id="side-navigation-root">
+                    <li class="ds_side-navigation__item">
+                      <span class="ds_side-navigation__link ds_current">Background information</span>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/improving-accessibility" class="ds_side-navigation__link">Improving accessibility</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/non-accessible-content" class="ds_side-navigation__link">Non-accessible content</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="ds_layout__feedback">
+                <!--
+                    Feedback form
+                -->
+                <p>Feedback</p>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds_page__bottom">
+        <!--
+            Footer
+            Scripts
+        -->
+        <footer class="ds_site-footer">
+          <div class="ds_wrapper">
+            <div class="ds_site-footer__content">
+              <ul class="ds_site-footer__site-items">
+                <li class="ds_site-items__item">
+                  <a href="#">Privacy</a>
+                </li>
+                <li class="ds_site-items__item">
+                  <a href="#">Cookies</a>
+                </li>
+                <li class="ds_site-items__item">
+                  <a href="#">Accessibility</a>
+                </li>
+              </ul>
+
+              <div class="ds_site-footer__copyright">
+                <a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                  <img src="/assets/images/logos/ogl.svg" alt="Open Government License" />
+                </a>
+                <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
+                <p>&copy; Crown Copyright</p>
+              </div>
+
+              <div class="ds_site-footer__org">
+                <a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
+                  <img class="ds_site-footer__org-logo" src="/assets/images/logos/scottish-government--min.svg" alt="gov.scot" loading="lazy" width="300" height="55" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--<script src="/dist/scripts/test.js"></script>
+          <script type="module" src="/dist/scripts/pattern-library.js"></script>
+          <script nomodule src="/dist/scripts/pattern-library.es5.js"></script>
+          <script>window.DS.initAll();</script>-->
+          <!--<script type="module" src="/library/src/all.js"></script>-->
+          <!--<script type="module" src="/public/scripts/all.js"></script>-->
+          <!--<script type="module" src="public/scripts/test.js"></script>-->
+          <script type="module" src="public/scripts/pattern-library.js"></script>
+          <script type="application/javascript" src="public/scripts/main.js"></script>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

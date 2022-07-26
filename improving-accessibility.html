@@ -146,16 +146,16 @@
 
                       <div class="ds_field-group">
                         <div class="ds_radio">
-                          <input checked="" id="automated-testing-yes" value="yes" name="automated-testing-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('automated-testing-yes');"/>
+                          <input checked="" id="automated-testing-yes" value="yes" name="automated-testing-query" class="ds_radio__input" type="radio" onchange="storeRadio('automated-testing-query', 'yes');"/>
                           <label for="automated-testing-yes" class="ds_radio__label">Yes</label>
                         </div>
                         <div class="ds_radio">
-                          <input id="automated-testing-no" value="no" name="automated-testing-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('automated-tseting-no');"/>
+                          <input id="automated-testing-no" value="no" name="automated-testing-query" class="ds_radio__input" type="radio" onchange="storeRadio('automated-testing-query', 'no');"/>
                           <label for="automated-testing-no" class="ds_radio__label">No</label>
 
                           <div class="ds_reveal-content">
                             <div class="ds_question">
-                              <p><a href="#">This resourse</a> could help you with automated testing.</p>
+                              <p><a href="#">This resourse</a> could help you with automated testing.(get a resource for here)</p>
                             </div>
                           </div>
                         </div>
@@ -170,7 +170,7 @@
 
                         <div class="ds_field-group">
                           <div class="ds_radio">
-                            <input checked="" id="user-testing-yes" value="yes" name="user-testing-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('user-testing-yes');"/>
+                            <input checked="" id="user-testing-yes" value="yes" name="user-testing-query" class="ds_radio__input" type="radio" onchange="storeRadio('user-testing-query', 'yes');"/>
                             <label for="user-testing-yes" class="ds_radio__label">Yes</label>
 
                             <div class="ds_reveal-content">
@@ -181,7 +181,7 @@
                             </div>
                           </div>
                           <div class="ds_radio">
-                            <input id="user-testing-no" value="no" name="user-testing-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('user-testing-no');"/>
+                            <input id="user-testing-no" value="no" name="user-testing-query" class="ds_radio__input" type="radio" onchange="storeRadio('user-testing-query', 'no');"/>
                             <label for="user-testing-no" class="ds_radio__label">No</label>
                           </div>
                         </div>
@@ -194,12 +194,12 @@
 
                         <div class="ds_field-group  ds_field-group--inline">
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessibility-officer-yes" name="accessibility-officer-query" type="radio" value="yes" onchange="storeCheckbox('accessibility-officer-yes');"/>
+                                <input class="ds_radio__input" id="accessibility-officer-yes" name="accessibility-officer-query" type="radio" value="yes" onchange="storeRadio('accessibility-officer-query', 'yes');"/>
                                 <label class="ds_radio__label" for="accessibility-officer-yes">Yes</label>
                             </div>
 
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessibility-officer-no" name="accessibility-officer-query" type="radio" value="no" onchange="storeCheckbox('accessibility-officer-no');"/>
+                                <input class="ds_radio__input" id="accessibility-officer-no" name="accessibility-officer-query" type="radio" value="no" onchange="storeRadio('accessibility-officer-query', 'no');"/>
                                 <label class="ds_radio__label" for="accessibility-officer-no">No</label>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
 
                         <div class="ds_field-group">
                           <div class="ds_radio">
-                            <input checked="" id="training-yes" value="yes" name="training-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('training-yes');"/>
+                            <input checked="" id="training-yes" value="yes" name="training-query" class="ds_radio__input" type="radio" onchange="storeRadio('training-query', 'yes');"/>
                             <label for="training-yes" class="ds_radio__label">Yes</label>
 
                             <div class="ds_reveal-content">
@@ -223,12 +223,12 @@
                             </div>
                           </div>
                           <div class="ds_radio">
-                            <input id="training-no" value="no" name="training-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('training-no');"/>
+                            <input id="training-no" value="no" name="training-query" class="ds_radio__input" type="radio" onchange="storeRadio('training-query', 'no');"/>
                             <label for="training-no" class="ds_radio__label">No</label>
 
                             <div class="ds_reveal-content">
                               <div class="ds_question">
-                                <p><a href="#">This resourse</a> could help you with training.</p>
+                                <p><a href="#">This resourse</a> could help you with training.(need resource here)</p>
                               </div>
                             </div>
                           </div>
@@ -242,12 +242,12 @@
 
                         <div class="ds_field-group  ds_field-group--inline">
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="personas-yes" name="personas-query" type="radio" value="yes" onchange="storeCheckbox('personas-yes');"/>
+                                <input class="ds_radio__input" id="personas-yes" name="personas-query" type="radio" value="yes" onchange="storeRadio('personas-query', 'yes');"/>
                                 <label class="ds_radio__label" for="personas-yes">Yes</label>
                             </div>
 
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="personas-no" name="personas-query" type="radio" value="no" onchange="storeCheckbox('personas-no');"/>
+                                <input class="ds_radio__input" id="personas-no" name="personas-query" type="radio" value="no" onchange="storeRadio('personas-query', 'no');"/>
                                 <label class="ds_radio__label" for="personas-no">No</label>
                             </div>
                         </div>
@@ -259,12 +259,12 @@
 
                         <div class="ds_field-group  ds_field-group--inline">
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessible-procurement-yes" name="accessible-procurement-query" type="radio" value="yes" onchange="storeCheckbox('accessible-procurement-yes');"/>
+                                <input class="ds_radio__input" id="accessible-procurement-yes" name="accessible-procurement-query" type="radio" value="yes" onchange="storeRadio('accessible-procurement-query', 'yes');"/>
                                 <label class="ds_radio__label" for="accessible-procurement-yes">Yes</label>
                             </div>
 
                             <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessible-procurement-no" name="accessible-procurement-query" type="radio" value="no" onchange="storeCheckbox('accessible-procurement-no');"/>
+                                <input class="ds_radio__input" id="accessible-procurement-no" name="accessible-procurement-query" type="radio" value="no" onchange="storeRadio('accessible-procurement-query', 'no');"/>
                                 <label class="ds_radio__label" for="accessible-procurement-no">No</label>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
 
                         <div class="ds_field-group">
                           <div class="ds_radio">
-                            <input checked="" id="assistive-technology-yes" value="yes" name="assistive-technology-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('assistive-technology-yes');"/>
+                            <input checked="" id="assistive-technology-yes" value="yes" name="assistive-technology-query" class="ds_radio__input" type="radio" onchange="storeRadio('assistive-technology-query', 'yes');"/>
                             <label for="assistive-technology-yes" class="ds_radio__label">Yes</label>
 
                             <div class="ds_reveal-content">
@@ -309,7 +309,7 @@
                             </div>
                           </div>
                           <div class="ds_radio">
-                            <input id="assistive-technology-no" value="no" name="assistive-technology-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('assistive-technology-no');"/>
+                            <input id="assistive-technology-no" value="no" name="assistive-technology-query" class="ds_radio__input" type="radio" onchange="storeRadio('assistive-technology-query', 'no');"/>
                             <label for="assistive-technology-no" class="ds_radio__label">No</label>
                           </div>
                         </div>
@@ -323,7 +323,7 @@
 
                         <div class="ds_field-group">
                           <div class="ds_radio">
-                            <input checked="" id="audited-yes" value="yes" name="audited-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('audited-yes');"/>
+                            <input checked="" id="audited-yes" value="yes" name="audited-query" class="ds_radio__input" type="radio" onchange="storeRadio('audited-query', 'yes');"/>
                             <label for="audited-yes" class="ds_radio__label">Yes</label>
 
                             <div class="ds_reveal-content">
@@ -334,7 +334,7 @@
                             </div>
                           </div>
                           <div class="ds_radio">
-                            <input id="audited-no" value="no" name="audited-query" class="ds_radio__input" type="radio" onchange="storeCheckbox('audited-no');"/>
+                            <input id="audited-no" value="no" name="audited-query" class="ds_radio__input" type="radio" onchange="storeRadio('audited-query', 'no');"/>
                             <label for="audited-no" class="ds_radio__label">No</label>
                           </div>
                         </div>

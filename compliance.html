@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Are you compliant? - Accessibility Statement Generator</title>
-    <link rel="stylesheet" type="text/css" href="/dist/css/pattern-library.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/pattern-library.css"/>
   </head>
   <body>
     <div class="ds_page">
@@ -138,7 +138,29 @@
                 <!--
                     The article content
                 -->
-                <p>Radio group? Yes,no,other? 2.0, 2.1?</p>
+                <p>2.0 vs 2.1?</p>
+                <form>
+                  <div class="ds_question">
+                    <fieldset id="compliance-query">
+                      <legend>Are you compliant with the <a href="https://www.w3.org/TR/WCAG21">Web Content Accessibility Guidelines version 2.1</a> (WCAG) A and AA success criteria?</legend>
+
+                      <div class="ds_field-group">
+                        <div class="ds_radio">
+                          <input checked="" id="compliance-fully" value="fully" name="compliance-query" class="ds_radio__input" type="radio" onchange="storeRadio('compliance-query', 'fully');"/>
+                          <label for="compliance-fully" class="ds_radio__label">Fully</label>
+                        </div>
+                        <div class="ds_radio">
+                          <input id="compliance-partially" value="partially" name="compliance-query" class="ds_radio__input" type="radio" onchange="storeRadio('compliance-query', 'partially');"/>
+                          <label for="compliance-partially" class="ds_radio__label">Partially</label>
+                        </div>
+                        <div class="ds_radio">
+                          <input id="compliance-not" value="not" name="compliance-query" class="ds_radio__input" type="radio" onchange="storeRadio('compliance-query', 'not');"/>
+                          <label for="compliance-not" class="ds_radio__label">Not</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </form>
                 <div class="button-group">
                   <a href="/disproportionate-burden" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
                     <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_left"></use></svg>

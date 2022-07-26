@@ -10,9 +10,10 @@ function storeCheckbox(id) {
   localStorage.setItem(id, valueToStore);
 }
 
-//function for radio buttons conceptually: store one variable for each radio group. Only change this variable in onchange event
+//function for radio buttons - only store one variable for each radio button group
+//onchange only triggers on select not on deselect
 function storeRadio(id, value) {
-
+  localStorage.setItem(id, value);
 }
 
 //function refill() onload="refill(id)"

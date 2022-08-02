@@ -22,8 +22,15 @@ function contentHTML() {
 
   var enforcement = "<h2>Enforcement procedure</h2><p>The Equality and Human Rights Commission enforces the <a href='https://www.legislation.gov.uk/uksi/2018/952/regulation/4/made'>accessibility regulations</a>(the Public Sector Bodies(Websites and Mobile Applications)(No. 2) Accessibility Regulations 2018).</p><p>If you're not happy with how we respond to your feedback, <a href='https://www.equalityadvisoryservice.com'>contact the Equality Advisory and Support Service</a>. They are an independent advice service. They will advise you on what to do next.";
 
-  var complianceStatement = "<h2>Compliance statement</h2><p>" + localStorage.getItem('organisation-name') + " commits to making its websites accessible in line with the accessibility regulations. This accessibility statement applies to " + localStorage.getItem('website-url') + ".</p><This statement was prepared on " + localStorage.getItem('prepared-date') + " and last reviewed on " + localStorage.getItem('reviewed-date') + ".</p><p>This website is " + localStorage.getItem('compliance-query') + " compliant with the <a href='https://www.w3.org/TR/WCAG21'>Web Content Accessibility Guidelines version 2.1</a> (WCAG) A and AA success criteria.</p>";
+  var complianceStatement = "<h2>Compliance statement</h2><p>" + localStorage.getItem('organisation-name') + " commits to making its websites accessible in line with the accessibility regulations. This accessibility statement applies to " + localStorage.getItem('website-url') + ".</p><p>This statement was prepared on " + localStorage.getItem('prepared-date') + " and last reviewed on " + localStorage.getItem('reviewed-date') + ".</p><p>This website is " + localStorage.getItem('compliance-query') + " compliant with the <a href='https://www.w3.org/TR/WCAG21'>Web Content Accessibility Guidelines version 2.1</a> (WCAG) A and AA success criteria.</p>";
 
-  var content = title + accessibility + feedback + enforcement + complianceStatement;
+  var audited = "";
+  if (localStorage.getItem('audited-query') == 'yes') {
+    audited = localStorage.getItem('audited-details') + " audited the website on " + localStorage.getItem('audited-date') + ".";
+  }
+
+  var nonAccessibleContent = "";
+
+  var content = title + accessibility + feedback + enforcement + complianceStatement + audited + nonAccessibleContent;
   return content;
 }

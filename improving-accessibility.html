@@ -24,89 +24,6 @@
                   Accessibility Statement Generator
                 </div>
               </div>
-
-              <div class="ds_site-header__controls">
-                <label aria-controls="mobile-navigation" class="ds_site-header__control  js-toggle-menu" for="menu">
-                  <span class="ds_site-header__control-text">Menu</span>
-                  <svg class="ds_icon  ds_site-header__control-icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#menu"></use></svg>
-                  <svg class="ds_icon  ds_site-header__control-icon  ds_site-header__control-icon--active-icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#close"></use></svg>
-                </label>
-              </div>
-
-              <input class="ds_site-navigation__toggle" id="menu" type="checkbox" />
-              <nav id="mobile-navigation" class="ds_site-navigation  ds_site-navigation--mobile" data-module="ds-mobile-navigation-menu">
-                <ul class="ds_site-navigation__list">
-                  <li class="ds_site-navigation__item">
-                    <a href="/background" class="ds_site-navigation__link">
-                      Background information
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <span class="ds_site-navigation__link  ds_current">
-                      Improving accessibility
-                    </span>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/outside-scope" class="ds_site-navigation__link">
-                      Outside scope
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/disproportionate-burden" class="ds_site-navigation__link">
-                      Disproportionate burden
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/compliance" class="ds_site-navigation__link">
-                      Compliance
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/non-accessible-content" class="ds_site-navigation__link">
-                      Non-accessible content
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="ds_site-header__navigation">
-            <div class="ds_wrapper">
-              <nav class="ds_site-navigation">
-                <ul class="ds_site-navigation__list">
-                  <li class="ds_site-navigation__item">
-                    <a href="/background" class="ds_site-navigation__link">
-                      Background information
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <span class="ds_site-navigation__link  ds_current">
-                      Improving accessibility
-                    </span>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/outside-scope" class="ds_site-navigation__link">
-                      Outside scope
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/disproportionate-burden" class="ds_site-navigation__link">
-                      Disproportionate burden
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/compliance" class="ds_site-navigation__link">
-                      Compliance
-                    </a>
-                  </li>
-                  <li class="ds_site-navigation__item">
-                    <a href="/non-accessible-content" class="ds_site-navigation__link">
-                      Non-accessible content
-                    </a>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </header>
@@ -187,23 +104,6 @@
                         </div>
                     </fieldset>
                   </div>
-                </form>
-                <form>
-                    <fieldset>
-                        <legend>Do you have an accessibility officer?</legend>
-
-                        <div class="ds_field-group  ds_field-group--inline">
-                            <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessibility-officer-yes" name="accessibility-officer-query" type="radio" value="yes" onchange="storeRadio('accessibility-officer-query', 'yes');"/>
-                                <label class="ds_radio__label" for="accessibility-officer-yes">Yes</label>
-                            </div>
-
-                            <div class="ds_radio">
-                                <input class="ds_radio__input" id="accessibility-officer-no" name="accessibility-officer-query" type="radio" value="no" onchange="storeRadio('accessibility-officer-query', 'no');"/>
-                                <label class="ds_radio__label" for="accessibility-officer-no">No</label>
-                            </div>
-                        </div>
-                    </fieldset>
                 </form>
                 <form>
                   <div class="ds_question">
@@ -331,6 +231,12 @@
                                 <label class="ds_label" for="audited-details">Which organisation performed the audit?</label>
                                 <input class="ds_input" type="text" id="audited-details" onchange="store('audited-details');"/>
                               </div>
+                              <div data-module="ds-datepicker" class="ds_datepicker">
+                                <label class="ds_label" for="audited-date">When was the audit performed?</label>
+                                <div class="ds_input__wrapper">
+                                  <input id="audited-date" placeholder="dd/mm/yyyy" type="text" class="ds_input  ds_input--fixed-10" onchange="store('audited-date');"/>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <div class="ds_radio">
@@ -347,7 +253,7 @@
                     Back
                   </a>
 
-                  <a href="/outside-scope" class="ds_button  ds_button--has-icon">
+                  <a href="/compliance" class="ds_button  ds_button--has-icon">
                     Next
                     <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_right"></use></svg>
                   </a>
@@ -367,20 +273,19 @@
                       <a href="/background" class="ds_side-navigation__link">Background Information</a>
                     </li>
                     <li class="ds_side-navigation__item">
-
                       <span class="ds_side-navigation__link ds_current">Improving accessibility</span>
-                    </li>
-                    <li class="ds_side-navigation__item">
-                      <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
-                    </li>
-                    <li class="ds_side-navigation__item">
-                      <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/non-accessible-content" class="ds_side-navigation__link">Non-accessible content</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
                     </li>
                   </ul>
                 </nav>
@@ -431,9 +336,11 @@
               </div>
             </div>
           </div>
+          <script type="module" src="public/scripts/pattern-library.js"></script>
           <script type="application/javascript" src="public/scripts/main.js"></script>
         </footer>
       </div>
     </div>
   </body>
 </html>
+

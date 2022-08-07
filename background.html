@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Background info - Accessibility Statement Generator</title>
     <link rel="stylesheet" type="text/css" href="/public/style.css"/>
   </head>
-  <body>
+  <body onload="reload(['organisation-name', 'website-name', 'website-url', 'prepared-date', 'reviewed-date'])">
     <div class="ds_page">
       <div class="ds_page__top">
         <!--
@@ -17,7 +17,7 @@
             <div class="ds_site-header__content">
               <div class="ds_site-branding">
                 <a class="ds_site-branding__logo  ds_site-branding__link" href="/">
-                  <img class="ds_site-branding__logo-image" src="/image/path/for/logo" alt="logo" />
+                  <img class="ds_site-branding__logo-image" src="/public/images/scotgovlogo.svg" alt="Scottish Government" />
                 </a>
 
                 <div class="ds_site-branding__title">
@@ -43,7 +43,6 @@
                 <!--
                     Optional partner branding
                 -->
-                <h2>Partner branding</h2>
               </div>
 
               <div class="ds_layout__content">
@@ -60,6 +59,7 @@
                 </div>
                 <div>
                   <label class="ds_label" for="website-url">What is your website's URL?</label>
+                  <p class="ds_hint-text">e.g. https://www.google.com</p>
                   <input class="ds_input  ds_input--fluid-half" type="text" id="website-url" onchange="store('website-url');"/>
                 </div>
                 <div data-module="ds-datepicker" class="ds_datepicker">
@@ -73,27 +73,6 @@
                   <div class="ds_input__wrapper">
                     <input id="reviewed-date" placeholder="dd/mm/yyyy" type="text" class="ds_input  ds_input--fixed-10" onchange="store('reviewed-date');"/>
                   </div>
-                </div>
-                <p>Where can feedback be provided?</p>
-                <div>
-                  <label class="ds_label" for="feedback-email">Email</label>
-                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-email" onchange="store('feedback-email');"/>
-                </div>
-                <div>
-                  <label class="ds_label" for="feedback-telephone">Telephone</label>
-                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-telephone" onchange="store('feedback-telephone');"/>
-                </div>
-                <div>
-                  <label class="ds_label" for="feedback-name">Name</label>
-                  <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-name" onchange="store('feedback-name');"/>
-                </div>
-                <div>
-                  <label class="ds_label" for="contact-form">Contact form URL</label>
-                  <input class="ds_input  ds_input--fluid-half" type="text" id="contact-form" onchange="store('contact-form');"/>
-                </div>
-                <div>
-                  <label class="ds_label" for="response-process">What is the response process?</label>
-                  <textarea class="ds_input  ds_input--fluid-half" rows="3" id="response-process" onchange="store('response-process');"></textarea>
                 </div>
                 <div class="button-group">
                   <a href="/" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
@@ -132,13 +111,16 @@
                       <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
                     </li>
                     <li class="ds_side-navigation__item">
-                      <a href="/non-accessible-content" class="ds_side-navigation__link">Non-accessible content</a>
+                      <a href="/non-compliant" class="ds_side-navigation__link">Non-compliant content</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/download" class="ds_side-navigation__link">Download statement</a>
                     </li>
                   </ul>
                 </nav>
@@ -177,7 +159,7 @@
 
               <div class="ds_site-footer__copyright">
                 <a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
-                  <img src="/assets/images/logos/ogl.svg" alt="Open Government License" />
+                  <img src="/public/images/ogl.svg" alt="Open Government License" />
                 </a>
                 <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
                 <p>&copy; Crown Copyright</p>
@@ -185,7 +167,7 @@
 
               <div class="ds_site-footer__org">
                 <a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
-                  <img class="ds_site-footer__org-logo" src="/assets/images/logos/scottish-government--min.svg" alt="gov.scot" loading="lazy" width="300" height="55" />
+                  <img class="ds_site-footer__org-logo" src="/public/images/scottish-government--min.svg" alt="The Scottish Government" loading="lazy" width="300" height="55" />
                 </a>
               </div>
             </div>

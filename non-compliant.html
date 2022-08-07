@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Non-compliant content - Accessibility Statement Generator</title>
+    <link rel="stylesheet" type="text/css" href="/public/pattern-library.css"/>
+  </head>
+  <body onload="reloadTable('non-compliant');">
+    <div class="ds_page">
+      <div class="ds_page__top">
+        <!--
+            Notifications
+            Site header
+            Site navigation
+        -->
+        <header class="ds_site-header  ds_site-header--gradient" role="banner">
+          <div class="ds_wrapper">
+            <div class="ds_site-header__content">
+              <div class="ds_site-branding">
+                <a class="ds_site-branding__logo  ds_site-branding__link" href="/">
+                  <img class="ds_site-branding__logo-image" src="/public/images/scotgovlogo.svg" alt="Scottish Government" />
+                </a>
+
+                <div class="ds_site-branding__title">
+                  Accessibility Statement Generator
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="ds_page__middle">
+        <!--
+            Main content
+        -->
+        <div id="body_wrapper" class="body_wrapper">
+          <div class="ds_wrapper">
+            <main class="ds_layout  ds_layout--article">
+              <div class="ds_layout__header">
+                <!--
+                    A ds_article-header component or other header content
+                -->
+                <header class="ds_page-header">
+                  <h1 class="ds_page-header__title">Non-compliant content</h1>
+                </header>
+              </div>
+
+              <div class="ds_layout__partner">
+                <!--
+                    Optional partner branding
+                -->
+              </div>
+
+              <div class="ds_layout__content">
+                <!--
+                    The article content
+                -->
+                <p>Add one? Issue, workarounds, timescales, success criteria</p>
+                <p>Change this page to non-compliant content?</p>
+                <p>Please list on this page any parts of your website which are not compliant with the legislation. Include the issue, any workarounds available, the timescale over which you aim to fix the issue, and the success criteria that must be met for the issue to be fixed.</p>
+                <button class="ds_button  ds_button--secondary" id="addOneButton" onclick="addOne('non-compliant')">+Section</button>
+
+                <div>
+
+                  <table class="ds_table" data-smallscreen="boxes" id="table-non-compliant">
+                    <caption>Non-compliant content</caption>
+
+                    <thead>
+                      <tr>
+                        <th>Section</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div id="addToPage">
+
+                </div>
+
+                <div class="button-group">
+                  <a href="/compliance" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
+                    <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_left"></use></svg>
+                    Back
+                  </a>
+
+
+                  <a href="/disproportionate-burden" class="ds_button  ds_button--has-icon" >
+                    Next
+                    <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_right"></use></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="ds_layout__sidebar">
+                <!--
+                    Sidebar content, such as related links
+                -->
+                <nav aria-label="Sections" class="ds_side-navigation" data-module="ds-side-navigation">
+                  <input type="checkbox" class="fully-hidden  js-toggle-side-navigation" id="show-side-navigation" aria-controls="side-navigation-root" />
+                  <label class="ds_side-navigation__expand  ds_link" for="show-side-navigation"><span class="visually-hidden">Show all</span> Pages in this section <span class="ds_side-navigation__expand-indicator"></span></label>
+
+                  <ul class="ds_side-navigation__list" id="side-navigation-root">
+                    <li class="ds_side-navigation__item">
+                      <a href="/background" class="ds_side-navigation__link">Background Information</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/feedback" class="ds_side-navigation__link">Feedback</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/improving-accessibility" class="ds_side-navigation__link">Improving accessibility</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <span class="ds_side-navigation__link ds_current">Non-compliant content</span>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/download" class="ds_side-navigation__link">Download statement</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="ds_layout__feedback">
+                <!--
+                    Feedback form
+                -->
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds_page__bottom">
+        <!--
+            Footer
+            Scripts
+        -->
+        <footer class="ds_site-footer">
+          <div class="ds_wrapper">
+            <div class="ds_site-footer__content">
+              <ul class="ds_site-footer__site-items">
+                <li class="ds_site-items__item">
+                  <a href="#">Privacy</a>
+                </li>
+                <li class="ds_site-items__item">
+                  <a href="#">Cookies</a>
+                </li>
+                <li class="ds_site-items__item">
+                  <a href="#">Accessibility</a>
+                </li>
+              </ul>
+
+              <div class="ds_site-footer__copyright">
+                <a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+                  <img src="/public/images/ogl.svg" alt="Open Government License" />
+                </a>
+                <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
+                <p>&copy; Crown Copyright</p>
+              </div>
+
+              <div class="ds_site-footer__org">
+                <a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
+                  <img class="ds_site-footer__org-logo" src="/public/images/scottish-government--min.svg" alt="The Scottish Government" loading="lazy" width="300" height="55" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <script type="application/javascript" src="public/scripts/main.js"></script>
+          <script type="application/javascript" src="public/scripts/statement.js"></script>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

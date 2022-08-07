@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Improving accessibility - Accessibility Statement Generator</title>
     <link rel="stylesheet" type="text/css" href="/public/style.css"/>
   </head>
-  <body>
+  <body onload="reload(['user-testing-details', 'training-details', 'audited-details']);reloadRadio(['automated-testing-query', 'user-testing-query', 'training-query', 'personas-query', 'accessible-procurement-query', 'assistive-technology-query', 'audited-query']);reloadCheckbox(['screen-reader', 'voice-browser', 'braille-display']);">
     <div class="ds_page">
       <div class="ds_page__top">
         <!--
@@ -17,7 +17,7 @@
             <div class="ds_site-header__content">
               <div class="ds_site-branding">
                 <a class="ds_site-branding__logo  ds_site-branding__link" href="/">
-                  <img class="ds_site-branding__logo-image" src="/image/path/for/logo" alt="logo" />
+                  <img class="ds_site-branding__logo-image" src="/public/images/scotgovlogo.svg" alt="Scottish Government" />
                 </a>
 
                 <div class="ds_site-branding__title">
@@ -92,7 +92,7 @@
 
                             <div class="ds_reveal-content">
                               <div class="ds_question">
-                                <label class="ds_label" for="user-testing-details">What have you done? Should this be a list of checkboxes or is textarea ok?</label>
+                                <label class="ds_label" for="user-testing-details">What kinds of testing have you done with users?</label>
                                 <textarea id="user-testing-details" class="ds_input" rows="4" data-validation="requiredField" aria-required="true" onchange="store('user-testing-details');"></textarea>
                               </div>
                             </div>
@@ -117,7 +117,7 @@
 
                             <div class="ds_reveal-content">
                               <div class="ds_question">
-                                <label class="ds_label" for="training-details">What have you done? Should this be a list of checkboxes or is textarea ok?</label>
+                                <label class="ds_label" for="training-details">What kinds of accessibility training have you done?</label>
                                 <textarea id="training-details" class="ds_input" rows="4" data-validation="requiredField" aria-required="true" onchange="store('training-details');"></textarea>
                               </div>
                             </div>
@@ -273,19 +273,25 @@
                       <a href="/background" class="ds_side-navigation__link">Background Information</a>
                     </li>
                     <li class="ds_side-navigation__item">
+                      <a href="/feedback" class="ds_side-navigation__link">Feedback</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
                       <span class="ds_side-navigation__link ds_current">Improving accessibility</span>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
                     </li>
                     <li class="ds_side-navigation__item">
-                      <a href="/non-accessible-content" class="ds_side-navigation__link">Non-accessible content</a>
+                      <a href="/non-compliant" class="ds_side-navigation__link">Non-compliant content</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/download" class="ds_side-navigation__link">Download statement</a>
                     </li>
                   </ul>
                 </nav>
@@ -323,7 +329,7 @@
 
               <div class="ds_site-footer__copyright">
                 <a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
-                  <img src="/assets/images/logos/ogl.svg" alt="Open Government License" />
+                  <img src="/public/images/ogl.svg" alt="Open Government License" />
                 </a>
                 <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
                 <p>&copy; Crown Copyright</p>
@@ -331,7 +337,7 @@
 
               <div class="ds_site-footer__org">
                 <a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
-                  <img class="ds_site-footer__org-logo" src="/assets/images/logos/scottish-government--min.svg" alt="gov.scot" loading="lazy" width="300" height="55" />
+                  <img class="ds_site-footer__org-logo" src="/public/images/scottish-government--min.svg" alt="The Scottish Government" loading="lazy" width="300" height="55" />
                 </a>
               </div>
             </div>
@@ -343,4 +349,3 @@
     </div>
   </body>
 </html>
-

@@ -39,7 +39,6 @@
                 <!--
                     Optional partner branding
                 -->
-                <h2>Partner branding</h2>
               </div>
 
               <div class="ds_layout__content">
@@ -47,7 +46,7 @@
                     The article content
                 -->
                 <header class="ds_page-header">
-                  <span class="ds_page-header__label  ds_content-label">Guide???What should I put here?</span>
+                  <span class="ds_page-header__label  ds_content-label">Guide</span>
                   <h1 class="ds_page-header__title">Accessibility Statement Generator</h1>
 
                   <dl class="ds_page-header__metadata  ds_metadata">
@@ -58,15 +57,23 @@
                   </dl>
                 </header>
                 <p>This is a tool for generating accessibility statements for your web applications. To complete this you will need the following:</p>
-                <p>The button empties local storage to create a new statement without all the data from previous statements</p>
-                <a href="/background" class="ds_button" onclick="emptyStorage();">Start here</a>
+                <p>The Create new statement button empties local storage to create a new statement without all the data from previous statements</p>
+                <p>Only add Continue existing statement to page if local storage has content in it? Flag? Make it a secondary button</p>
+                <div class="button-group">
+                  <a href="/background" class="ds_button" onclick="emptyStorage();">
+                    Create new statement
+                  </a>
+
+                  <a href="/background" class="ds_button  ds_button--secondary">
+                    Continue existing statement
+                  </a>
+                </div>
               </div>
 
               <div class="ds_layout__sidebar">
                 <!--
                     Sidebar content, such as related links
                 -->
-                <p>Should there be navigation on this page?</p>
               </div>
 
               <div class="ds_layout__feedback">

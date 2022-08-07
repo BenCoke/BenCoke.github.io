@@ -29,8 +29,8 @@ function contentHTML() {
     audited = localStorage.getItem('audited-details') + " audited the website on " + localStorage.getItem('audited-date') + ".";
   }
 
-  var nonAccessibleContent = "";
+  var nonCompliantContent = "";
 
-  var content = title + accessibility + feedback + enforcement + complianceStatement + audited + nonAccessibleContent;
+  var content = title + accessibility + feedback + enforcement + complianceStatement + audited + nonCompliantContent;
   return content;
 }

@@ -16,14 +16,68 @@ function storeRadio(id, value) {
   localStorage.setItem(id, value);
 }
 
-//function refill() onload="refill(id)"
+//loops through the ids passed to it
+//sets the value on the page equal to the value in local storage
+function reload(ids) {
+  for (let id of ids) {
+    if (localStorage.getItem(id)) {
+      document.getElementById(id).value = localStorage.getItem(id);
+    }
+  }
+}
+
+//id passed here will be xyz-query
+//this gets rid of the "query"(slice(0, -5)) and replaces it with the value in local storage
+//then sets that radio button to selected
+function reloadRadio(ids) {
+  for (let id of ids) {
+    if (localStorage.getItem(id)) {
+      document.getElementById(id.slice(0, -5) + localStorage.getItem(id)).checked = true;
+    }
+  }
+}
+
+function reloadCheckbox(ids) {
+  for (let id of ids) {
+    if (localStorage.getItem(id) === 'true') {
+      document.getElementById(id).checked = true;
+    }
+  }
+}
+
+function reloadTable(id) {
+  for (let i = 0; i < localStorage.length; i++) {
+
+    if (localStorage.key(i).startsWith(id)) {
+      var table = document.getElementById("table-" + id);
+      var row = table.insertRow(1);
+      row.setAttribute("id", localStorage.key(i));
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerHTML = localStorage.getItem(localStorage.key(i));
+      cell2.innerHTML = "<button class='ds_button ds_button--cancel ds_button--fixed ds_button--has-icon' onclick='removeFromTable(this);'>Remove<svg class='ds_icon' aria-hidden='true' role='img'><use href='/public/images/icons.stack.svg#close'></use></svg></button>";
+
+    }
+  }
+}
+
 //might need a seperate fill function for addToPage divs?
 //remove a div and all of its children from a page
-//hide button before submit -> show button after submit
 function addOne(id) {
   const div = document.createElement('div');
   var addToPage = document.getElementById("addToPage");
-  var idNumber = addToPage.children.length + 1;
+
+  var idNumber;
+  if (localStorage.getItem("counter-" + id) === null) {
+    localStorage.setItem("counter-" + id, 0);
+    idNumber = 0;
+  } else {
+    idNumber = localStorage.getItem("counter-" + id);
+  }
+
+  //var idNumber = addToPage.children.length + document.getElementById("table-" + id).rows.length;
   div.setAttribute("id", "div-" + id + "-" + idNumber);
   var label = "<label class='ds_label' for='" + id + "-" + idNumber + "'>Section:</label>";
   var textarea = "<textarea class='ds_input  ds_input--fluid-half' rows='3' id='" + id + "-" + idNumber + "' /></textarea>";
@@ -32,6 +86,7 @@ function addOne(id) {
   div.innerHTML = label + textarea + button;
 
   document.getElementById("addToPage").appendChild(div);
+  localStorage.setItem("counter-" + id, ++idNumber);
 }
 
 //add data to local storage
@@ -42,31 +97,36 @@ function submit(id) {
   var valueToStore = document.getElementById(inputId).value;
   localStorage.setItem(inputId, valueToStore);
 
-  var tableId = "table-non-accessible";
+  //regex matches a "-" then digits at the end of a string and replaces them with nothing
+  //to get the correct table id
+  var tableId = "table-" + id.substring(4).replace(/\-\d+$/, "");
   var table = document.getElementById(tableId);
 
+  //what is x for?
   var x = document.getElementById(tableId).rows.length;
   var row = table.insertRow(-1);
+  row.setAttribute("id", inputId);
 
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
-  cell2.setAttribute("align", "right");
 
   cell1.innerHTML = valueToStore;
   cell2.innerHTML = "<button class='ds_button ds_button--cancel ds_button--fixed ds_button--has-icon' onclick='removeFromTable(this);'>Remove<svg class='ds_icon' aria-hidden='true' role='img'><use href='/public/images/icons.stack.svg#close'></use></svg></button>"
 
   const myNode = document.getElementById(id);
-  myNode.innerHTML = '';
+  myNode.remove();
 
 }
 
 //remove data from local storage
 //remove row from table
-function removeFromTable(row) {
-  var index = row.parentNode.parentNode.rowIndex;
-  document.getElementById("table-non-accessible").deleteRow(index);
+function removeFromTable(button) {
+  var index = button.parentNode.parentNode.rowIndex;
+  //alert(button.parentNode.parentNode.parentNode.parentNode.id);
+  table = button.parentNode.parentNode.parentNode.parentNode;
+  table.deleteRow(index);
 
-  var itemToRemove = "non-accessible-" + index;
+  var itemToRemove = button.parentNode.parentNode.id;
   localStorage.removeItem(itemToRemove);
 }
 

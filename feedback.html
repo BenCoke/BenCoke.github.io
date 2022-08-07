@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Feedback - Accessibility Statement Generator</title>
     <link rel="stylesheet" type="text/css" href="/public/style.css"/>
   </head>
-  <body>
+  <body onload="reload(['feedback-email', 'feedback-telephone', 'feedback-name', 'contact-form', 'response-process']);reloadRadio(['accessibility-officer-query']);">
     <div class="ds_page">
       <div class="ds_page__top">
         <!--
@@ -17,7 +17,7 @@
             <div class="ds_site-header__content">
               <div class="ds_site-branding">
                 <a class="ds_site-branding__logo  ds_site-branding__link" href="/">
-                  <img class="ds_site-branding__logo-image" src="/image/path/for/logo" alt="logo" />
+                  <img class="ds_site-branding__logo-image" src="/public/images/scotgovlogo.svg" alt="Scottish Government" />
                 </a>
 
                 <div class="ds_site-branding__title">
@@ -43,7 +43,6 @@
                 <!--
                     Optional partner branding
                 -->
-                <h2>Partner branding</h2>
               </div>
 
               <div class="ds_layout__content">
@@ -78,6 +77,7 @@
                 </div>
                 <div>
                   <label class="ds_label" for="feedback-name">Name</label>
+                  <p class="ds_hint-text">This could be your accessibility officer or another contact at your organisation.</p>
                   <input class="ds_input  ds_input--fluid-half" type="text" id="feedback-name" onchange="store('feedback-name');"/>
                 </div>
                 <div>
@@ -85,7 +85,7 @@
                   <input class="ds_input  ds_input--fluid-half" type="text" id="contact-form" onchange="store('contact-form');"/>
                 </div>
                 <div>
-                  <label class="ds_label" for="response-process">What is the response process?</label>
+                  <label class="ds_label" for="response-process">Outline your process for responding to feedback</label>
                   <textarea class="ds_input  ds_input--fluid-half" rows="3" id="response-process" onchange="store('response-process');"></textarea>
                 </div>
                 <div class="button-group">
@@ -125,13 +125,16 @@
                       <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
                     </li>
                     <li class="ds_side-navigation__item">
-                      <a href="/non-accessible-content" class="ds_side-navigation__link">Non-accessible content</a>
+                      <a href="/non-compliant" class="ds_side-navigation__link">Non-compliant content</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                    </li>
+                    <li class="ds_side-navigation__item">
+                      <a href="/download" class="ds_side-navigation__link">Download statement</a>
                     </li>
                   </ul>
                 </nav>
@@ -170,7 +173,7 @@
 
               <div class="ds_site-footer__copyright">
                 <a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
-                  <img src="/assets/images/logos/ogl.svg" alt="Open Government License" />
+                  <img src="/public/images/ogl.svg" alt="Open Government License" />
                 </a>
                 <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
                 <p>&copy; Crown Copyright</p>
@@ -178,7 +181,7 @@
 
               <div class="ds_site-footer__org">
                 <a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
-                  <img class="ds_site-footer__org-logo" src="/assets/images/logos/scottish-government--min.svg" alt="gov.scot" loading="lazy" width="300" height="55" />
+                  <img class="ds_site-footer__org-logo" src="/public/images/scottish-government--min.svg" alt="The Scottish Government" loading="lazy" width="300" height="55" />
                 </a>
               </div>
             </div>
@@ -190,3 +193,4 @@
     </div>
   </body>
 </html>
+

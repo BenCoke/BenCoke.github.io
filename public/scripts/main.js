@@ -59,6 +59,9 @@ function reloadTable(id) {
       cell1.innerHTML = localStorage.getItem(localStorage.key(i));
       cell2.innerHTML = "<button class='ds_button ds_button--cancel ds_button--fixed ds_button--has-icon' onclick='removeFromTable(this);'>Remove<svg class='ds_icon' aria-hidden='true' role='img'><use href='/public/images/icons.stack.svg#close'></use></svg></button>";
 
+      if (table.rows.length > 1) {
+        table.setAttribute("style", "display:block;");
+      }
     }
   }
 }
@@ -102,6 +105,11 @@ function submit(id) {
   var tableId = "table-" + id.substring(4).replace(/\-\d+$/, "");
   var table = document.getElementById(tableId);
 
+  //show the table when content is added
+  if (table.getAttribute("style") == "display:none;") {
+    table.setAttribute("style", "display:block;");
+  }
+
   //what is x for?
   var x = document.getElementById(tableId).rows.length;
   var row = table.insertRow(-1);
@@ -128,8 +136,123 @@ function removeFromTable(button) {
 
   var itemToRemove = button.parentNode.parentNode.id;
   localStorage.removeItem(itemToRemove);
+
+  //hide table if it is empty
+  if (table.rows.length === 1) {
+    table.setAttribute("style", "display:none;");
+  }
 }
 
 function emptyStorage() {
   localStorage.clear();
+}
+
+//For non compliant
+//might need a seperate fill function for addToPage divs?
+//remove a div and all of its children from a page
+function addOneNonCompliant(id) {
+  const div = document.createElement('div');
+  var addToPage = document.getElementById("addToPage");
+
+  var idNumber;
+  if (localStorage.getItem("counter-" + id) === null) {
+    localStorage.setItem("counter-" + id, 0);
+    idNumber = 0;
+  } else {
+    idNumber = localStorage.getItem("counter-" + id);
+  }
+
+  //var idNumber = addToPage.children.length + document.getElementById("table-" + id).rows.length;
+  div.setAttribute("id", "div-" + id + "-" + idNumber);
+  var issueLabel = "<label class='ds_label' for=\"issue-" + id + "-" + idNumber + "\">Issue:</label>";
+  var issueTextarea = "<textarea class='ds_input  ds_input--fluid-half' rows='3' id=\"issue-" + id + "-" + idNumber + "\" /></textarea>";
+
+  var workaroundsLabel = "<label class='ds_label' for=\"workarounds-" + id + "-" + idNumber + "\">What workarounds are available?</label>";
+  var workaroundsTextarea = "<textarea class='ds_input  ds_input--fluid-half' rows='3' id=\"workarounds-" + id + "-" + idNumber + "\" /></textarea>";
+
+  var datePickerDiv = "<div data-module='ds-datepicker' class='ds_datepicker'>";
+  var datePickerLabel = "<label class='ds_label' for=\"resolved-by-" + id + "-" + idNumber + "\">When will the issue be resolved by?</label>";
+  var inputWrapperDiv = "<div class='ds_input__wrapper'>";
+  var datePickerInput = "<input id=\"resolved-by-" + id + "-" + idNumber + "\" placeholder='dd/mm/yyyy' type='text' class='ds_input  ds_input--fixed-10' />";
+  var closeDivs = "</div></div><script type='module' src='public/scripts/pattern-library.js'></script>";
+
+  var resolvedBy = datePickerDiv + datePickerLabel + inputWrapperDiv + datePickerInput + closeDivs;
+
+  var button = "<button class='ds_button  ds_button--secondary' onclick=\"submitNonCompliant('div-" + id + "-" + idNumber + "')\">Submit</button>";
+
+  div.innerHTML = issueLabel + issueTextarea + workaroundsLabel + workaroundsTextarea + resolvedBy + button;
+
+  document.getElementById("addToPage").appendChild(div);
+  localStorage.setItem("counter-" + id, ++idNumber);
+}
+
+//add data to local storage
+//add section to table
+//remove div from page
+function submitNonCompliant(id) {
+  var inputId = id.substring(4);
+  //var valueToStore = document.getElementById(inputId).value;
+  var issueValue = document.getElementById("issue-" + inputId).value;
+  var workaroundsValue = document.getElementById("workarounds-" + inputId).value;
+  var resolvedByValue = document.getElementById("resolved-by-" + inputId).value;
+
+  var issueObject = { 'issueValue': issueValue, 'workaroundsValue': workaroundsValue, 'resolvedByValue': resolvedByValue};
+
+  localStorage.setItem(inputId, JSON.stringify(issueObject));
+
+  //regex matches a "-" then digits at the end of a string and replaces them with nothing
+  //to get the correct table id
+  var tableId = "table-" + id.substring(4).replace(/\-\d+$/, "");
+  var table = document.getElementById(tableId);
+
+  //show the table when content is added
+  if (table.getAttribute("style") == "display:none;") {
+    table.setAttribute("style", "display:block;");
+  }
+
+  //what is x for?
+  var x = document.getElementById(tableId).rows.length;
+  var row = table.insertRow(-1);
+  row.setAttribute("id", inputId);
+
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+
+  cell1.innerHTML = issueValue;
+  cell2.innerHTML = workaroundsValue;
+  cell3.innerHTML = resolvedByValue;
+  cell4.innerHTML = "<button class='ds_button ds_button--cancel ds_button--fixed ds_button--has-icon' onclick='removeFromTable(this);'>Remove<svg class='ds_icon' aria-hidden='true' role='img'><use href='/public/images/icons.stack.svg#close'></use></svg></button>"
+
+  const myNode = document.getElementById(id);
+  myNode.remove();
+
+}
+
+function reloadTableNonCompliant(id) {
+  for (let i = 0; i < localStorage.length; i++) {
+
+    if (localStorage.key(i).startsWith(id)) {
+      var table = document.getElementById("table-" + id);
+      var row = table.insertRow(1);
+      row.setAttribute("id", localStorage.key(i));
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+
+      var issueObject = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+      cell1.innerHTML = issueObject['issueValue'];
+      cell2.innerHTML = issueObject['workaroundsValue'];
+      cell3.innerHTML = issueObject['resolvedByValue'];
+      cell4.innerHTML = "<button class='ds_button ds_button--cancel ds_button--fixed ds_button--has-icon' onclick='removeFromTable(this);'>Remove<svg class='ds_icon' aria-hidden='true' role='img'><use href='/public/images/icons.stack.svg#close'></use></svg></button>";
+
+      if (table.rows.length > 1) {
+        table.setAttribute("style", "display:block;");
+      }
+    }
+  }
 }

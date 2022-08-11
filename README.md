@@ -46,5 +46,3 @@ storage. This is important as it is the information in local storage that will b
 process
 
 The statement is written by the contentHTML function in statement.js.
-
-Remaining todos:

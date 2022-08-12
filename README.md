@@ -41,10 +41,14 @@ within the group that the value of the group will be stored within, each radio b
 
 Add the id to the appropriate reload function in the opening <body> tag of each page. e.g.
 
-<body onload="reload(['organisation-name'])> to <body onload="reload(['organisation-name', 'website-name'])
+             <body onload="reload(['organisation-name'])>
+             
+to
+             
+             <body onload="reload(['organisation-name', 'website-name'])
 
 This will make sure that the information on the page always matches the information contained in local
 storage. This is important as it is the information in local storage that will be used to generate the statement at the end of the 
-process
+process.
 
 The statement is written by the contentHTML function in statement.js.

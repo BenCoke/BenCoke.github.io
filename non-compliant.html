@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Non-compliant content - Accessibility Statement Generator</title>
-    <link rel="stylesheet" type="text/css" href="/public/pattern-library.css"/>
+    <title>Not within scope of regulations - Accessibility Statement Generator</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="/public/images/favicon.ico">
   </head>
-  <body onload="reloadTableNonCompliant('non-compliant');">
+  <body onload="reloadTable('outside-scope');">
     <div class="ds_page">
       <div class="ds_page__top">
         <!--
@@ -42,7 +42,7 @@
                     A ds_article-header component or other header content
                 -->
                 <header class="ds_page-header">
-                  <h1 class="ds_page-header__title">Non-compliant content</h1>
+                  <h1 class="ds_page-header__title">Not within scope of regulations</h1>
                 </header>
               </div>
 
@@ -56,20 +56,17 @@
                 <!--
                     The article content
                 -->
-                <p>Success criteria section in the add to page?</p>
-                <p>Please list on this page any parts of your website which are not compliant with the legislation. Include the issue, any workarounds available, the timescale over which you aim to fix the issue, and the success criteria that must be met for the issue to be fixed.</p>
-                <button class="ds_button  ds_button--secondary" id="addOneButton" onclick="addOneNonCompliant('non-compliant')">+Section</button>
+                <p>Some content is exempt from the regulations. List that content here.</p>
+                <button class="ds_button  ds_button--secondary" id="addOneButton" onclick="addOne('outside-scope')">+Section</button>
 
                 <div>
 
-                  <table class="ds_table" data-smallscreen="boxes" id="table-non-compliant" style="display:none;">
-                    <caption>Non-compliant content</caption>
+                  <table class="ds_table" data-smallscreen="boxes" id="table-outside-scope" style="display:none;">
+                    <caption>Outside scope of regulations</caption>
 
                     <thead>
                       <tr>
-                        <th>Issue</th>
-                        <th>Workarounds</th>
-                        <th>Address by</th>
+                        <th>Section</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -84,13 +81,13 @@
                 </div>
 
                 <div class="button-group">
-                  <a href="/compliance" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
+                  <a href="/disproportionate-burden" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
                     <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_left"></use></svg>
                     Back
                   </a>
 
 
-                  <a href="/disproportionate-burden" class="ds_button  ds_button--has-icon" >
+                  <a href="/download" class="ds_button  ds_button--has-icon">
                     Next
                     <svg class="ds_icon" aria-hidden="true" role="img"><use href="/public/images/icons.stack.svg#chevron_right"></use></svg>
                   </a>
@@ -119,13 +116,13 @@
                       <a href="/compliance" class="ds_side-navigation__link">Compliance</a>
                     </li>
                     <li class="ds_side-navigation__item">
-                      <span class="ds_side-navigation__link ds_current">Non-compliant content</span>
+                      <a href="/non-compliant" class="ds_side-navigation__link">Non-compliant content</a>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/disproportionate-burden" class="ds_side-navigation__link">Disproportionate burden</a>
                     </li>
                     <li class="ds_side-navigation__item">
-                      <a href="/outside-scope" class="ds_side-navigation__link">Outside scope</a>
+                      <span class="ds_side-navigation__link ds_current">Outside scope</span>
                     </li>
                     <li class="ds_side-navigation__item">
                       <a href="/download" class="ds_side-navigation__link">Download statement</a>
@@ -180,8 +177,6 @@
             </div>
           </div>
           <script type="application/javascript" src="public/scripts/main.js"></script>
-          <script type="application/javascript" src="public/scripts/statement.js"></script>
-          <script type="module" src="public/scripts/pattern-library.js"></script>
         </footer>
       </div>
     </div>

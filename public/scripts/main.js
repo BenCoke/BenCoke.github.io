@@ -1,10 +1,10 @@
-//add data to local storage when a field is changed
+//add data to local storage when called(in an onchange="")
 function store(id) {
   var valueToStore = document.getElementById(id).value;
   localStorage.setItem(id, valueToStore);
 }
 
-//store data of checkbox fields
+//store data of a checkbox field
 function storeCheckbox(id) {
   var valueToStore = document.getElementById(id).checked;
   localStorage.setItem(id, valueToStore);
@@ -16,7 +16,7 @@ function storeRadio(id, value) {
   localStorage.setItem(id, value);
 }
 
-//loops through the ids passed to it
+//loops through the array of ids passed to it
 //sets the value on the page equal to the value in local storage
 function reload(ids) {
   for (let id of ids) {
@@ -37,6 +37,7 @@ function reloadRadio(ids) {
   }
 }
 
+//ticks checkboxes that are stored as true in local storage
 function reloadCheckbox(ids) {
   for (let id of ids) {
     if (localStorage.getItem(id) === 'true') {
@@ -45,6 +46,8 @@ function reloadCheckbox(ids) {
   }
 }
 
+//used on the outside-scope and disproportionate-burden pages
+//loops through local storgae and refills tables on page
 function reloadTable(id) {
   for (let i = 0; i < localStorage.length; i++) {
 
@@ -66,8 +69,9 @@ function reloadTable(id) {
   }
 }
 
-//might need a seperate fill function for addToPage divs?
-//remove a div and all of its children from a page
+//add a div to the page with a label, textarea, and submit button
+//id number is assigned using a counter in local storage
+//prevents id collisions
 function addOne(id) {
   const div = document.createElement('div');
   var addToPage = document.getElementById("addToPage");
@@ -80,7 +84,6 @@ function addOne(id) {
     idNumber = localStorage.getItem("counter-" + id);
   }
 
-  //var idNumber = addToPage.children.length + document.getElementById("table-" + id).rows.length;
   div.setAttribute("id", "div-" + id + "-" + idNumber);
   var label = "<label class='ds_label' for='" + id + "-" + idNumber + "'>Section:</label>";
   var textarea = "<textarea class='ds_input  ds_input--fluid-half' rows='3' id='" + id + "-" + idNumber + "' /></textarea>";
@@ -110,8 +113,6 @@ function submit(id) {
     table.setAttribute("style", "display:block;");
   }
 
-  //what is x for?
-  var x = document.getElementById(tableId).rows.length;
   var row = table.insertRow(-1);
   row.setAttribute("id", inputId);
 
@@ -130,7 +131,6 @@ function submit(id) {
 //remove row from table
 function removeFromTable(button) {
   var index = button.parentNode.parentNode.rowIndex;
-  //alert(button.parentNode.parentNode.parentNode.parentNode.id);
   table = button.parentNode.parentNode.parentNode.parentNode;
   table.deleteRow(index);
 
@@ -143,13 +143,12 @@ function removeFromTable(button) {
   }
 }
 
+//used by the create new statement button on the front page
 function emptyStorage() {
   localStorage.clear();
 }
 
-//For non compliant
-//might need a seperate fill function for addToPage divs?
-//remove a div and all of its children from a page
+//For non compliant content page
 function addOneNonCompliant(id) {
   const div = document.createElement('div');
   var addToPage = document.getElementById("addToPage");
@@ -162,7 +161,6 @@ function addOneNonCompliant(id) {
     idNumber = localStorage.getItem("counter-" + id);
   }
 
-  //var idNumber = addToPage.children.length + document.getElementById("table-" + id).rows.length;
   div.setAttribute("id", "div-" + id + "-" + idNumber);
   var issueLabel = "<label class='ds_label' for=\"issue-" + id + "-" + idNumber + "\">Issue:</label>";
   var issueTextarea = "<textarea class='ds_input  ds_input--fluid-half' rows='3' id=\"issue-" + id + "-" + idNumber + "\" /></textarea>";
@@ -172,11 +170,12 @@ function addOneNonCompliant(id) {
 
   var datePickerDiv = "<div data-module='ds-datepicker' class='ds_datepicker'>";
   var datePickerLabel = "<label class='ds_label' for=\"resolved-by-" + id + "-" + idNumber + "\">When will the issue be resolved by?</label>";
+  var datePickerHint = "<p class='ds_hint-text'>In dd/mm/yyyy format</p>"
   var inputWrapperDiv = "<div class='ds_input__wrapper'>";
   var datePickerInput = "<input id=\"resolved-by-" + id + "-" + idNumber + "\" placeholder='dd/mm/yyyy' type='text' class='ds_input  ds_input--fixed-10' />";
   var closeDivs = "</div></div><script type='module' src='public/scripts/pattern-library.js'></script>";
 
-  var resolvedBy = datePickerDiv + datePickerLabel + inputWrapperDiv + datePickerInput + closeDivs;
+  var resolvedBy = datePickerDiv + datePickerLabel + datePickerHint + inputWrapperDiv + datePickerInput + closeDivs;
 
   var button = "<button class='ds_button  ds_button--secondary' onclick=\"submitNonCompliant('div-" + id + "-" + idNumber + "')\">Submit</button>";
 
@@ -210,8 +209,6 @@ function submitNonCompliant(id) {
     table.setAttribute("style", "display:block;");
   }
 
-  //what is x for?
-  var x = document.getElementById(tableId).rows.length;
   var row = table.insertRow(-1);
   row.setAttribute("id", inputId);
 

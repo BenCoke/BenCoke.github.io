@@ -14,6 +14,8 @@ function downloadHTML() {
   document.body.removeChild(element);
 }
 
+//each section of the statement is defined here
+//to add a section define it then make sure to add it in the desired location in the content variable
 function contentHTML() {
   var title = "<h1>Accessibility Statement</h1>";
   var accessibility = "<h2>Accessibility</h2><p>We want " + localStorage.getItem('organisation-name') + " to be accessible and usable for as many people as possible.</p><p>We try to make our site more accessible by using:</p>";
@@ -22,7 +24,14 @@ function contentHTML() {
 
   var enforcement = "<h2>Enforcement procedure</h2><p>The Equality and Human Rights Commission enforces the <a href='https://www.legislation.gov.uk/uksi/2018/952/regulation/4/made'>accessibility regulations</a>(the Public Sector Bodies(Websites and Mobile Applications)(No. 2) Accessibility Regulations 2018).</p><p>If you're not happy with how we respond to your feedback, <a href='https://www.equalityadvisoryservice.com'>contact the Equality Advisory and Support Service</a>. They are an independent advice service. They will advise you on what to do next.";
 
-  var complianceStatement = "<h2>Compliance statement</h2><p>" + localStorage.getItem('organisation-name') + " commits to making its websites accessible in line with the accessibility regulations. This accessibility statement applies to " + localStorage.getItem('website-url') + ".</p><p>This statement was prepared on " + localStorage.getItem('prepared-date') + " and last reviewed on " + localStorage.getItem('reviewed-date') + ".</p><p>This website is " + localStorage.getItem('compliance-query') + " compliant with the <a href='https://www.w3.org/TR/WCAG21'>Web Content Accessibility Guidelines version 2.1</a> (WCAG) A and AA success criteria.</p>";
+  var complianceStatement = "<h2>Compliance statement</h2><p>" + localStorage.getItem('organisation-name') + " commits to making its websites accessible in line with the accessibility regulations. This accessibility statement applies to " + localStorage.getItem('website-url') + ".</p><p>This statement was prepared on " + localStorage.getItem('prepared-date');
+
+  if (localStorage.getItem('reviewed-date')) {
+     complianceStatement += " and last reviewed on ";
+     complianceStatement += localStorage.getItem('reviewed-date');
+  }
+
+  complianceStatement += ".</p><p>This website is " + localStorage.getItem('compliance-query') + " compliant with the <a href='https://www.w3.org/TR/WCAG21'>Web Content Accessibility Guidelines version 2.1</a> (WCAG) A and AA success criteria.</p>";
 
   var audited = "";
   if (localStorage.getItem('audited-query') == 'yes') {
@@ -70,6 +79,7 @@ function contentHTML() {
     }
   }
 
+  //put together sections here
   var content = title + accessibility + feedback + enforcement + complianceStatement + audited + nonCompliantContent + disproportionateBurden + outsideScope;
   return content;
 }

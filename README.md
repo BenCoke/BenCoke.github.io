@@ -5,7 +5,9 @@ This is a tool to help those providing a web service produce accessibility state
 The tool is made with HTML, CSS, and javascript. It uses the Digital Scotland Design System Pattern 
 Library for its components.
 
-How to edit content: To edit text on the page find it in the html document and change the text. To add components to the
+How to edit content: To edit text on the page find it in the html document and change the text. 
+
+To add components to the
 page find the component you want to add in the pattern library and add it to the html document. Change the id's to suitable ones
 and double check to make sure that the chosen id is not already used elsewhere in the generator. Add the appropriate store function
 to the input in an onchange attribute. e.g. 
